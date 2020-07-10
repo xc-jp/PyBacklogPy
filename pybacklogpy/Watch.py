@@ -172,6 +172,8 @@ class Watch:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
         if offset is not None:
             payloads['offset'] = offset
         if resource_already_read is not None:

@@ -108,6 +108,8 @@ class User:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
         if order is not None:
             if order is not None:
                 if order not in {'desc', 'asc'}:
@@ -182,6 +184,8 @@ class User:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
         if order is not None:
             if order not in {'desc', 'asc'}:
                 raise ValueError('order は desc または asc のみが使用できます')
@@ -216,6 +220,8 @@ class User:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
 
         return self.rs.send_get_request(path=path, url_param=payloads)
 
@@ -245,6 +251,8 @@ class User:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
 
         return self.rs.send_get_request(path=path, url_param=payloads)
 
@@ -274,5 +282,7 @@ class User:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
 
         return self.rs.send_get_request(path=path, url_param=payloads)
