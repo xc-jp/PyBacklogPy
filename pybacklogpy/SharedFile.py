@@ -16,7 +16,7 @@ class SharedFile:
                                  file_path: str,
                                  order: str = 'desc',
                                  offset: Optional[int] = None,
-                                 count: int = 1000,
+                                 count: int = 100,
                                  ) -> Response:
         """
         共有ファイル一覧の取得
@@ -43,6 +43,8 @@ class SharedFile:
         if count is not None:
             if not 1 <= count <= 100:
                 raise ValueError('count(取得上限)は1-100の範囲で指定してください')
+            else:
+                payloads['count'] = count
 
         return self.rs.send_get_request(path=path, url_param=payloads)
 
